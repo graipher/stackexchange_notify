@@ -9,7 +9,7 @@ usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY] [-n {pync,GTK}]
                     [-i ICON]
 
 StackExchange notifications
-￼
+
 
 optional arguments:
   -h, --help            show this help message and exit
