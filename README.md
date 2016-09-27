@@ -1,6 +1,6 @@
 # stackexchange_notify
 
-A small python script that runs in the background and watches a StackExchange sub-site (optionally filtered by one tag) for new posts and displays them.
+A small python script that watches a StackExchange sub-site (optionally filtered by one tag) for new posts and displays them.
 
 Starts with showing the posts from the last ~15mins
 
