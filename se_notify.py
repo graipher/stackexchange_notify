@@ -1,7 +1,7 @@
 # @Author: Andreas Weiden <andreas.weiden@gmail.com>
 # @Date:   2016-09-27 15:32:31
 # @Last modified by:   andreas
-# @Last modified time: 2016-09-27 16:51:42
+# @Last modified time: 2016-09-27 17:14:43
 
 
 import stackexchange
@@ -22,8 +22,6 @@ def gtk_notify(question, icon):
     import gi
     gi.require_version('Notify', '0.7')
     from gi.repository import Notify
-    if not icon:
-        icon = 'dialog-information'
     Notify.init('stackexchange')
     notification = Notify.Notification.new(
         '{.title}'.format(question),
@@ -38,7 +36,7 @@ def now():
     return int(time.time())
 
 
-def get_questions(site, query_delay, tag):
+def get_questions(site, query_delay, tag, start_time):
     """Fetch recent questions from the Stack Exchange network
 
     This function uses the SE API and yield each
@@ -46,7 +44,7 @@ def get_questions(site, query_delay, tag):
     """
 
     se = stackexchange.Site(site, 'ynrQ))36pm7Pyx92S4eK2A((')
-    last_query = now() - 1000
+    last_query = now() - start_time
     kwargs = {}
     if tag is not None:
         kwargs['tagged'] = tag
@@ -61,10 +59,17 @@ def get_questions(site, query_delay, tag):
         time.sleep(query_delay)
 
 
+def get_icon(site):
+    import os
+    path = "{}/icons/{}.png".format(os.getcwd(), site.lower())
+    if os.path.isfile(path):
+        return path
+    return "dialog-information"
+
+
 def main():
     notifiers = {"GTK": gtk_notify, "pync": pync_notify}
     sites = [s for s in dir(stackexchange.sites) if not s.startswith('__')]
-    icons = {"CodeReview": "icons/codereview.png"}
 
     parser = argparse.ArgumentParser(description="StackExchange notifications")
     parser.add_argument('-s', '--site', metavar="SITE", default='CodeReview', choices=sites,
@@ -77,12 +82,14 @@ def main():
                         choices=notifiers, help="Which notifier to use (default: GTK)")
     parser.add_argument('-i', '--icon', default=None,
                         help="Icon (GTK only), either short name or absolute path")
+    parser.add_argument('--start-time', type=int, default=1000,
+                        help="How far back to start displaying in seconds (default: 1000)")
     args = parser.parse_args()
 
     notifier = notifiers[args.notifier]
-    if not args.icon and args.site in icons:
-        args.icon = icons[args.site]
-    for question in get_questions(args.site, args.delay, args.tag):
+    if not args.icon:
+        args.icon = get_icon(args.site)
+    for question in get_questions(args.site, args.delay, args.tag, args.start_time):
         notifier(question, args.icon)
 
 if __name__ == '__main__':
