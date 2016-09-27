@@ -1,7 +1,7 @@
 # @Author: Andreas Weiden <andreas.weiden@gmail.com>
 # @Date:   2016-09-27 15:32:31
 # @Last modified by:   andreas
-# @Last modified time: 2016-09-27 16:43:01
+# @Last modified time: 2016-09-27 16:51:42
 
 
 import stackexchange
@@ -46,7 +46,7 @@ def get_questions(site, query_delay, tag):
     """
 
     se = stackexchange.Site(site, 'ynrQ))36pm7Pyx92S4eK2A((')
-    last_query = now() - 10000
+    last_query = now() - 1000
     kwargs = {}
     if tag is not None:
         kwargs['tagged'] = tag
