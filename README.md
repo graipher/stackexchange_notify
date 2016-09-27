@@ -2,6 +2,8 @@
 
 A small python script that runs in the background and watches a StackExchange sub-site (optionally filtered by one tag) for new posts and displays them.
 
+Starts with showing the posts from the last ~15mins
+
 Currently it supports GTK (with lib-notify) and MacOS (with pync).
 
 ```
