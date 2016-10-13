@@ -1,4 +1,4 @@
-# stackexchange_notify
+# Stackexchange notify
 
 A small python script that watches a StackExchange sub-site (optionally filtered by one tag) for new posts and displays them.
 
