@@ -23,6 +23,10 @@ optional arguments:
   -n {pync,GTK}, --notifier {pync,GTK}
                         Which notifier to use (default: GTK)
   -i ICON, --icon ICON  Icon (GTK only), either short name or absolute path
+  --start-time START_TIME
+                        How far back to start displaying in seconds (default:
+                        1000)
+  --verbose, -v         Turn on printing of new questions
 ```
 
 ## Requirements
