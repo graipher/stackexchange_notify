@@ -4,7 +4,7 @@ A small python script that watches a StackExchange sub-site (optionally filtered
 
 Starts with showing the posts from the last ~15mins
 
-Currently it supports GTK (with lib-notify) and MacOS (with pync).
+Currently it supports GTK (with lib-notify), MacOS (with pync) and output to the terminal.
 
 ```
 usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY] [-n {pync,GTK}]
