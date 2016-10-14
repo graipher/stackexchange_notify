@@ -7,7 +7,7 @@ Starts with showing the posts from the last ~15mins
 Currently it supports GTK (with lib-notify), MacOS (with pync) and output to the terminal.
 
 ```
-usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY] [-n {pync,GTK}]
+usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY] [-n {pync,terminal,GTK}]
                     [-i ICON]
 
 StackExchange notifications
@@ -20,13 +20,20 @@ optional arguments:
   -d DELAY, --delay DELAY
                         Delay (in seconds) between subsequent requests
                         (default: 30)
-  -n {pync,GTK}, --notifier {pync,GTK}
+  -n {pync,terminal,GTK}, --notifier {pync,terminal,GTK}
                         Which notifier to use (default: GTK)
   -i ICON, --icon ICON  Icon (GTK only), either short name or absolute path
   --start-time START_TIME
                         How far back to start displaying in seconds (default:
                         1000)
   --verbose, -v         Turn on printing of new questions
+```
+
+## Installation/Usage
+```bash
+$ git clone git@github.com:graipher/stackexchange_notify.git
+$ cd stackexchange_notify
+$ ./se_notify.py -t python &
 ```
 
 ## Requirements
