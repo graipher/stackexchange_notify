@@ -35,7 +35,7 @@ $ git clone git@github.com:graipher/stackexchange_notify.git
 $ cd stackexchange_notify
 $ ./se_notify.py -t python &
 ```
-If you want the script to use the logo for the watched Stackexchange (GTK only), place a file in the icons folder with the name of the corresponding site.
+If you want the script to use the logo for the watched Stackexchange (GTK only), place a file in the icons folder with the name of the corresponding site in lowercase.
 
 ## Requirements
 
