@@ -7,11 +7,12 @@ Starts with showing the posts from the last ~15mins
 Currently it supports GTK (with lib-notify), MacOS (with pync) and output to the terminal.
 
 ```
-usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY] [-n {pync,terminal,GTK}]
-                    [-i ICON]
+usage: se_notify.py [-h] [-s SITE] [-t TAG] [-d DELAY]
+                    [-n {pync,terminal,GTK}] [-i ICON]
+                    [--start-time START_TIME] [--verbose]
+                    [--max-questions MAX_QUESTIONS]
 
 StackExchange notifications
-
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -27,6 +28,8 @@ optional arguments:
                         How far back to start displaying in seconds (default:
                         1000)
   --verbose, -v         Turn on printing of new questions
+  --max-questions MAX_QUESTIONS
+                        Maximum number of questions to display at a time (default: 20)
 ```
 
 ## Installation/Usage
@@ -35,7 +38,7 @@ $ git clone git@github.com:graipher/stackexchange_notify.git
 $ cd stackexchange_notify
 $ ./se_notify.py -t python &
 ```
-If you want the script to use the logo for the watched Stackexchange (GTK only), place a file in the icons folder with the name of the corresponding site in lowercase.
+If you want the script to use the logo for the watched Stackexchange (GTK only), you can place a file in the icons folder with the name of the corresponding site in lowercase. Otherwise the favicon of the site will be downloaded to the `icons` folder/
 
 ## Requirements
 
