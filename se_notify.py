@@ -3,7 +3,7 @@
 # @Author: Andreas Weiden <andreas.weiden@gmail.com>
 # @Date:   2016-09-27 15:32:31
 # @Last modified by:   andreas
-# @Last modified time: 2017-01-23 12:01:07
+# @Last modified time: 2017-01-23 15:20:10
 
 
 import argparse
@@ -14,7 +14,7 @@ import requests
 
 import argcomplete
 import stackexchange
-from notifiers import *
+from notifiers import gtk_notify, print_notify, pync_notify
 
 sites = [s for s in dir(stackexchange.sites) if not s.startswith('__')]
 
