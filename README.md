@@ -45,7 +45,7 @@ If you want the script to use the logo for the watched Stackexchange (GTK only),
 Uses the StackExchange API [Py-StackExchange](https://github.com/lucjon/Py-StackExchange)
 
 ```bash
-easy_install Py-StackExchange
+$ easy_install Py-StackExchange
 ```
 
 ### Linux (GTK)
@@ -53,7 +53,7 @@ easy_install Py-StackExchange
 To allow displaying the notification
 
 ```bash
-sudo apt install lib-notify lib-notify-dev
+$ sudo apt install lib-notify lib-notify-dev
 ```
 
 ### Mac OS
@@ -61,5 +61,5 @@ sudo apt install lib-notify lib-notify-dev
 To allow displaying the notification
 
 ```bash
-pip install pync
+$ pip install pync
 ```
