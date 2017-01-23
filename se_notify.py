@@ -3,7 +3,7 @@
 # @Author: Andreas Weiden <andreas.weiden@gmail.com>
 # @Date:   2016-09-27 15:32:31
 # @Last modified by:   andreas
-# @Last modified time: 2017-01-23 11:50:05
+# @Last modified time: 2017-01-23 12:01:07
 
 
 import argparse
@@ -34,7 +34,7 @@ parser.add_argument('--start-time', type=int, default=1000,
 parser.add_argument('--verbose', '-v', action='store_true',
                     help="Turn on printing of new questions")
 parser.add_argument('--max-questions', type=int, default=20,
-                    help="Maximum number of questions to display at a time.")
+                    help="Maximum number of questions to display at a time (default: 20)")
 argcomplete.autocomplete(parser)
 
 
